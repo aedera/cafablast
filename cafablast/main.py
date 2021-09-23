@@ -4,12 +4,9 @@ import scipy
 import scipy.sparse
 from scipy.sparse import csr_matrix
 
-# from . import CC, BP, MF
-# from . import CC_P2R, BP_P2R, MF_P2R
-# from . import CC_C2T, BP_C2T, MF_C2T
-
-from . import MF
-from . import MF_P2R, MF_C2T
+from . import CC, BP, MF
+from . import CC_P2R, BP_P2R, MF_P2R
+from . import CC_C2T, BP_C2T, MF_C2T
 
 def predict(query, namespace='cc'):
     if namespace == 'cc':
