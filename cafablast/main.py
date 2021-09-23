@@ -8,6 +8,8 @@ from . import CC, BP, MF
 from . import CC_P2R, BP_P2R, MF_P2R
 from . import CC_C2T, BP_C2T, MF_C2T
 
+EPSILON = 1e-9
+
 def predict(query, namespace='cc'):
     if namespace == 'cc':
         map_p2r = CC_P2R
@@ -27,7 +29,7 @@ def predict(query, namespace='cc'):
 
     i = map_p2r[query] # retrieve row number
     row_i = mat.getrow(i).todense() # get bitscores for terms
-    probs = row_i / np.sum(row_i) # normalize
+    probs = row_i / (np.sum(row_i) + EPSILON)# normalize
 
     predicted_terms = {}
     # loop over terms with non-zero probability
