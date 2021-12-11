@@ -55,6 +55,7 @@ CC = CC_SCR @ CC_TRM
 BP = BP_SCR @ BP_TRM
 MF = MF_SCR @ MF_TRM
 
-del CC_SCR, CC_TRM, BP_SCR, BP_TRM, MF_SCR, MF_TRM
+#breakpoint()
+del CC_TRM, BP_TRM, MF_TRM
 
 from .main import predict
